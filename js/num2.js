@@ -1,10 +1,19 @@
 const btnEl = document.querySelector(".btn");
+const title = document.querySelector(".title-minut");
 const boxEl = document.querySelector(".box");
 const timer = 30 * 1000;
+let num = 0;
+
 
 function removeColor() {
     boxEl.style.backgroundColor = "red";
 
+};
+
+function sum() {
+    
+    let tim = num++;
+    title.textContent = tim;
 };
 
 function mesaggeAlert() {
@@ -14,6 +23,8 @@ function mesaggeAlert() {
 };
 
 btnEl.addEventListener("click", () => {
+    
+    setInterval(sum, 1000);
     btnEl.style.display = "none";   
     setTimeout(removeColor, 20 * 1000);
     setTimeout(mesaggeAlert, timer);
